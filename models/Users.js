@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 
 const Model = Sequelize.Model;
-const sequelize = new Sequelize('demo', 'ghanshyam.intern', 'ghanshyam@123', {
-  host: 'stg-galeraabdul002.phonepe.nm2',
+const sequelize = new Sequelize('demo', 'ghanshyam.intern', 'passwd', {
+  host: 'sqlserver',
   dialect: 'mysql'
 });
 

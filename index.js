@@ -12,21 +12,13 @@ const { Users } = require('./models/Users');
 const { dataPoints } = require('./questionaire');
 
 const { isEmail, isMobilePhone } = require('validator');
-// const conn = mysql.createConnection({
-//   host: 'stg-galeraabdul002.phonepe.nm2',
-//   user: 'ghanshyam.intern',
-//   password: 'ghanshyam@123',
-//   database: 'demo'
-// });
 
-const sequelize = new Sequelize('demo', 'ghanshyam.intern', 'ghanshyam@123', {
-  host: 'stg-galeraabdul002.phonepe.nm2',
+
+
+const sequelize = new Sequelize('demo', 'ghanshyam.intern', 'passwd', {
+  host: 'sqlserver',
   dialect: 'mysql'
 });
-// const sequelize = new Sequelize('2mGYkJKPLi', '2mGYkJKPLi', 'LdhShU3DdW', {
-//   host: 'remotemysql.com',
-//   dialect: 'mysql'
-// });
 
 sequelize
   .authenticate()
@@ -132,7 +124,7 @@ app.post('/create', (req, res) => {
         }
       });
   }
-  return res.send(dataPoints.create.response);
+  return res.send(dataPoints.create.response.data);
 });
 
 app.listen(PORT, () => console.log(`Server up on port ${PORT}`));
